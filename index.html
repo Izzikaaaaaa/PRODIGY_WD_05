@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weathery 🌈</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Dark / Light Mode Toggle -->
+  <button class="theme-toggle" id="themeToggle" type="button">🌙</button>
+
+  <div class="weather-app">
+    <h1 class="app-title">🌈 Weathery</h1>
+
+    <!-- Search + Location -->
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city (e.g. Delhi)" autocomplete="off">
+      <button id="btnSearch" title="Search">🔍</button>
+      <button id="btnLocate" title="Use location">📍</button>
+    </div>
+
+    <!-- Status / Errors -->
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <!-- Current Weather -->
+    <div class="weather-info" id="weatherCard" hidden>
+      <h2 id="location">--</h2>
+      <div id="weatherAnimation" class="weather-animation">
+        <span id="emojiFallback" class="emoji-fallback">🌤</span>
+      </div>
+      <p id="temp" class="temp">-- °C</p>
+      <p id="condition">--</p>
+      <p id="details" class="details">Humidity: -- | Wind: --</p>
+      <p id="extra" class="extra">Feels like: -- • Pressure: -- hPa • Sunrise: -- • Sunset: --</p>
+    </div>
+
+    <!-- Forecast -->
+    <div class="forecast-section" id="forecastSection" hidden>
+      <h3>4‑Day Forecast (Midday)</h3>
+      <div class="forecast-cards" id="forecastCards"></div>
+    </div>
+
+    <!-- Smart Tips -->
+    <div class="smart-section" id="smartSection" hidden>
+      <h3>✨ Smart Tips</h3>
+      <div class="smart-badges" id="smartBadges"></div>
+      <div class="smart-grid">
+        <div class="smart-card">
+          <h4>👕 Outfit</h4>
+          <p id="outfitTip">--</p>
+        </div>
+        <div class="smart-card">
+          <h4>🎯 Activity</h4>
+          <p id="activityTip">--</p>
+        </div>
+        <div class="smart-card">
+          <h4>🩺 Health</h4>
+          <p id="healthTip">--</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
+          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- App Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
